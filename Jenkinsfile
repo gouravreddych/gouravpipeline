@@ -1,24 +1,10 @@
 pipeline {
-    agent none 
+    agent any
+
     stages {
-        stage(‘GITCLONE) {
-            agent { any} 
+        stage('Hello') {
             steps {
-               
-                sh ‘Git clone URL’
-            }
-        stage(‘GITCLONE) {
-            agent { any} 
-            steps {
-                echo 'Hello, Maven'
-                sh 'mvn build . ‘
-            }
-        }
-        stage('Example Test') {
-            agent { docker 'openjdk:8-jre' } 
-            steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
+                echo 'Hello World'
             }
         }
     }
